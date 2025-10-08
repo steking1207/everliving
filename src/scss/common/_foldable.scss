@@ -1,7 +1,0 @@
-//
-// Foldable 收合列
-// ---------------------
-[js-foldable-head] { cursor: pointer; @include no-select; }
-[js-foldable-body] { display: none; }
-//.foldable--expanded [js-foldable-body] { display: block; } // Initially opened but 不支援多層收合
-

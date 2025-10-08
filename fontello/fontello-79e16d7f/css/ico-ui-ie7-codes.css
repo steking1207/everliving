@@ -1,8 +1,0 @@
-
-.ico-ui-lightbox { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
-.ico-ui-external { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
-.ico-ui-down-v { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf004;&nbsp;'); }
-.ico-ui-up-v { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf005;&nbsp;'); }
-.ico-ui-right-v { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf006;&nbsp;'); }
-.ico-ui-left-v { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf007;&nbsp;'); }
-.ico-ui-play { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf00f;&nbsp;'); }
