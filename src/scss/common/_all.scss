@@ -1,0 +1,372 @@
+//
+// --------------------------------------------
+// Image size miscellaneous
+// --------------------------------------------
+.ofi-cover,
+.ofi-contain {
+	display: block; width: 100%; height: 100%;
+}
+.ofi-cover {
+	object-fit: cover;
+	object-position: 50% 50%;
+	font-family: 'object-fit: cover; object-position: 50% 50%';
+}
+.ofi-contain {
+	object-fit: contain;
+	object-position: 50% 50%;
+	font-family: 'object-fit: contain; object-position: 50% 50%';
+} 
+//.clearfix { @include clearfix3; }
+
+.overflow-clip {
+	clip-path: inset(0px);
+	-webkit-clip-path: inset(0px);
+}
+//
+// --------------------------------------------
+// Raise up z-index
+// --------------------------------------------
+.z-n1 { z-index: -1; }
+.z-0 { z-index: 0; }
+.z-1 { z-index: 1; }
+.z-2 { z-index: 2; }
+.z-3 { z-index: 3; }
+
+//
+// --------------------------------------------
+// position value shortcut
+// --------------------------------------------
+.l-0 { left: 0; }
+.t-0 { top: 0; }
+.r-0 { right: 0; }
+.b-0 { bottom: 0; }
+.l-100p { left: 100%; }
+.t-100p { top: 100%; }
+.r-100p { right: 100%; }
+.b-100p { bottom: 100%; }
+
+
+//
+// --------------------------------------------
+.alpha-50 { opacity: .5; }
+.border-2 { border-width: 2px!important; }
+.border-3 { border-width: 3px!important; }
+
+
+//
+// --------------------------------------------
+.text-shadow { text-shadow: 0 .2em .3em rgba(#000,.5); }
+.shadow { box-shadow: 0 .2em .3em rgba(#000,.5); }
+
+
+
+
+//
+// --------------------------------------------
+// .splitlinks
+// --------------------------------------------
+.splitlinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap
+}
+	.splitlinks > a {
+	    position: relative;
+	    padding: 0 1em;
+	}
+
+	.splitlinks > a:after {
+	    content: ''; display: block;
+	    position: absolute;
+	    right: -1px;  top: 0; bottom: 0;
+	    margin: auto;
+	    width: 1px;
+	    height: 1em;
+	    background: rgba($gray-light, .3);
+	}
+	.splitlinks a:last-child:after {
+	    display: none;
+	}
+
+
+// --------------------------------------------
+// .thread
+// --------------------------------------------
+.thread {
+	position: absolute; margin: auto;
+	width: 1px;
+	height: 70px; 
+	pointer-events: none;
+	background: $primary;
+	@media #{$bp-576} { height: 48px;  }
+}
+.thread-lg {
+	height: 99px;
+	@media #{$bp-576} { height: 60px;  }
+}
+	// anim 
+	/* .mmb  */.thread.anim-wrap {
+		&.t-0 {  transform-origin: 50% 0%; }
+		&.b-0 {  transform-origin: 50% 100%; }
+
+		transform: scaleY(.01);
+		&.llin:not(.llout) { 
+			transform: scaleY(1); 
+			// designate value seperately to override _anim.scss presets
+			transition-duration: 2s!important;
+			transition-timing-function: $ease-strong-io!important;
+		}
+	}
+
+//
+// --------------------------------------------
+[class*="ratio-"] {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	//outline: 1px solid blue; //debug
+}
+.ratio-7x5 { padding-top: perc(5,7); }
+.ratio-11x10 { padding-top: perc(10,11); }
+.ratio-2x1 { padding-top: 50%; }
+.ratio-1x1 { padding-top: 100%; }
+.ratio-10x11 { padding-top: perc(11,10); }// portrait
+.ratio-7x9 { padding-top: perc(9,7); } // portrait
+.ratio-3x4 { padding-top: perc(4,3); } // portrait
+.ratio-2x3 { padding-top: perc(3,2); } // portrait
+@media #{$gt-576} { // `sm`
+	.ratio-sm-7x5 { padding-top: perc(5,7); }
+	.ratio-sm-11x10 { padding-top: perc(10,11); }
+	.ratio-sm-2x1 { padding-top: 50%; }
+	.ratio-sm-1x1 { padding-top: 100%; }
+	.ratio-sm-10x11 { padding-top: perc(11,10); }// portrait
+	.ratio-sm-7x9 { padding-top: perc(9,7); } // portrait
+	.ratio-sm-3x4 { padding-top: perc(4,3); } // portrait
+	.ratio-sm-2x3 { padding-top: perc(3,2); } // portrait
+}
+@media #{$gt-768} { // `md`
+	.ratio-md-7x5 { padding-top: perc(5,7); }
+	.ratio-md-11x10 { padding-top: perc(10,11); }
+	.ratio-md-2x1 { padding-top: 50%; }
+	.ratio-md-1x1 { padding-top: 100%; }
+	.ratio-md-10x11 { padding-top: perc(11,10); }// portrait
+	.ratio-md-7x9 { padding-top: perc(9,7); } // portrait
+	.ratio-md-3x4 { padding-top: perc(4,3); } // portrait
+	.ratio-md-2x3 { padding-top: perc(3,2); } // portrait
+}
+@media #{$gt-992} { // `lg`
+	.ratio-lg-7x5 { padding-top: perc(5,7); }
+	.ratio-lg-11x10 { padding-top: perc(10,11); }
+	.ratio-lg-2x1 { padding-top: 50%; }
+	.ratio-lg-1x1 { padding-top: 100%; }
+	.ratio-lg-10x11 { padding-top: perc(11,10); }// portrait
+	.ratio-lg-7x9 { padding-top: perc(9,7); } // portrait
+	.ratio-lg-3x4 { padding-top: perc(4,3); } // portrait
+	.ratio-lg-2x3 { padding-top: perc(3,2); } // portrait
+}
+//
+//
+// --------------------------------------------
+// leaf mask
+// --------------------------------------------
+.pic-leaf {
+	border-radius: 150px 0;
+	overflow: hidden;
+	@include backface-fix; // fix buggy safari
+}
+.pic-leaf-lg {
+	border-radius: 200px 0;
+}
+	@media #{$bp-1200} {
+		.pic-leaf { border-radius: 120px 0; }
+		.pic-leaf-lg { border-radius: 150px 0; }
+	}
+	@media #{$bp-992} {
+		.pic-leaf { border-radius: 100px 0; }
+		.pic-leaf-lg { border-radius: 120px 0; }
+	}
+	@media #{$bp-576} {
+		.pic-leaf-lg { border-radius: 100px 0; }
+	}
+	// anim
+	/* .mmb  */.pic-leaf.anim-wrap {
+		clip-path: circle(15% at 0% 0%);
+		-webkit-clip-path: circle(15% at 0% 0%);
+		&.anim-once.llin, 
+		&.llin:not(.llout) { 
+			clip-path: circle(140% at 0% 0%); 
+			// designate value seperately to override _anim.scss presets
+			transition-property: clip-path!important;
+			transition-duration: 2s!important;
+			transition-timing-function: $ease-strong!important;
+		} 
+	}
+	.pic-leaf-r.anim-wrap {
+		clip-path: circle(15% at 100% 0%);
+		-webkit-clip-path: circle(15% at 100% 0%);
+	}
+
+//
+// --------------------------------------------
+// .topkv
+// --------------------------------------------
+.topkv {
+	position: relative;
+	height: 1024px; height: 100vh; 
+	.touch & { height: var(--vh); } // only once when page loaded
+	max-height: 1024px;
+	overflow: hidden;
+	clip-path: inset(0px);
+	-webkit-clip-path: inset(0px);
+}
+
+	// header gradient overlay 
+	.topkv:after {
+		content: ''; display: block; position: absolute;
+		left: 0; top: 0; right: 0; bottom: 0;
+		background: linear-gradient(180deg, rgba(#000,.55) 5%, rgba(#000,0) 75%);
+	}
+	.topkv.topkv-gradient-light:after { 
+		background: linear-gradient(180deg, rgba(#000,.30) 5%, rgba(#000,0) 75%);	
+	}
+	.topkv.topkv-gradient-lighter:after { 
+		background: linear-gradient(180deg, rgba(#000,.10) 5%, rgba(#000,0) 75%);	
+	}
+
+	.topkv-pic { 
+		position: fixed;
+		z-index: -1;
+		width: 100%; 
+		height: 100%; height: 100vh; 
+		.touch & { height: var(--vh); } // only once when page loaded
+		max-height: 1024px;
+	}
+		// To avoid peek the broken kv iamge,
+		// add a black overlay to wait 1 second and then fade out
+		.topkv-pic:after {
+			content: ''; display: block; position: absolute;
+			left: 0; top: 0; right: 0; bottom: 0;
+			background: mix($brown,#000, 25%);
+			pointer-events: none;
+			animation: fade-in reverse 2s $ease-strong -.2s both;
+		}
+
+	.topkv-txt {
+		position: absolute;
+		z-index: 1;
+		left: 0; top: 0; right: 0; bottom: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center; justify-content: center; text-align: center;
+		padding: 0 1rem;
+	}
+	.topkv .scroll {
+		height: 56px;
+	}
+	// anim
+	.topkv .scroll {
+		animation: scale-y0-in 1.2s $ease-strong-io backwards;
+		transform-origin: 50% 100%;
+	}
+		.topkv .scroll-txt { animation: fade-in 1s 1s alternate infinite backwards; }
+	@media #{$bp-576} {
+		.topkv .scroll { height: 34px; }
+		.topkv, .topkv-pic {  max-height: 750px; }
+	}
+
+
+.midkv {
+	height: 650px;
+	overflow: hidden;
+	@media #{$bp-1200} { height: 600px; }
+	@media #{$bp-992} { height: 500px; }
+	@media #{$bp-768} { height: 450px; }
+	// mobile
+	@media #{$bp-576} {
+		height: auto; min-height: 580px;
+	}
+}
+@media #{$gt-1200} { 
+	.midkv-sm { height: 600px; }
+	.midkv-lg { height: 800px; }
+}
+
+// Apply skrollr parallax
+.midkv .t-0[skrollr-prlx] { top: -50px!important; }
+.midkv .b-0[skrollr-prlx] { bottom: -50px!important; }
+.h-110prlx { height: 110%!important; }
+
+
+.gradient-black-down,
+.gradient-black-up { 
+	position: absolute;
+	pointer-events: none;
+}
+.gradient-black-down { background: linear-gradient(180deg, rgba(#000,.3) 5%, rgba(#000,0) 100%); }
+.gradient-black-up {   background: linear-gradient(0deg, rgba(#000,.3) 5%, rgba(#000,0) 100%); }
+
+
+//
+// --------------------------------------------
+// All background patterns
+// --------------------------------------------
+[class*="pattern-"] { 
+	position: absolute;
+	pointer-events: none;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.pattern-tiles {
+	bottom: 0;
+	width: perc(800,1920); // 實際出圖 1200px 寬 (1.5x), 高auto
+	max-width: 800px;
+}
+.pattern-lines {
+	left: 0; top: 0; bottom: 0; right: 0;
+	max-width: 1520px;
+	margin: auto;
+	div {
+		position: absolute;
+		left: 40px; right: 40px; top: 0; bottom: 0;
+		border-left: 1px solid $wheat;
+		border-right: 1px solid $wheat;
+	}
+	&:before, &:after { 
+		content: ''; display: block; position: absolute;
+		top: 0; bottom: 0; 
+		border-left: 1px solid $wheat;
+	}
+	&:before {
+		left: 33.33%;
+		margin-left: 13px;
+	}
+	&:after {
+		right: 33.33%;
+		margin-right: 13px;
+	}
+}
+.pattern-text {
+	position: absolute; 
+	font-family: 'Lora', $font-family-serif;
+	line-height: .7;
+	font-size: 12.5vw;
+	letter-spacing: .08em;	
+	white-space: nowrap;
+	pointer-events: none;
+	@media #{$gt-1536} { font-size: 180px; }
+	@media #{$bp-992} { font-size: 100px; letter-spacing: 0; }
+}
+
+
+
+// Remove google map blue focus border
+.gm-style iframe + div { border:none!important; }
+// Remove initial gesture info overlay
+.gm-style-pbc, .gm-style-moc { display: none!important; }
+// Marker mouse cursor
+//#gmap [title="達人生活"][role="img"] { cursor: grab!important; }
+// infowindow close button 
+.gm-ui-hover-effect { width: 24px!important; height: 24px!important; margin: 4px 4px -20px 0!important;}
+.gm-ui-hover-effect > span { margin: 0!important; }
+.gm-style-iw-ch { padding-top: 0!important; }

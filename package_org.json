@@ -1,0 +1,14 @@
+{
+  "name": "永裕居建設",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {},
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "~1.32.12"
+  }
+}

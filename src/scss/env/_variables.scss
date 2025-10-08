@@ -1,0 +1,378 @@
+// Custom
+// media query breakpoints shortcuts
+// --------------------------------------------
+
+	// Desktop screens
+	$gt-1920				: "(min-width:1921px)";
+	$bp-1920				: "(max-width:1920px)"; 
+	$gt-1536				: "(min-width:1537px)"; 
+	$bp-1536				: "(max-width:1536px)";
+	$gt-1440				: "(min-width:1441px)";
+	$bp-1440				: "(max-width:1440px)";
+	$gt-1366				: "(min-width:1367px)";
+	$bp-1366				: "(max-width:1366px)";
+	$gt-1280				: "(min-width:1281px)";
+	$bp-1280				: "(max-width:1280px)";
+
+	// Align BS breakpoints 
+	// https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+	$gt-1200				: "(min-width:1200px)"; // BS `xl`
+	$bp-1200				: "(max-width:1199px)"; // < 1119 (tablet)
+	$gt-992					: "(min-width:992px)";  // BS `lg`
+	$bp-992					: "(max-width:991px)";  // < 991 (portrait tablet)
+	$gt-768					: "(min-width:768px)";  // BS `md` 
+	$bp-768					: "(max-width:767px)";  
+	$gt-576					: "(min-width:576px)";  // BS `sm`
+	$bp-576					: "(max-width:575px)";
+
+	// Fine-tune mobile devices
+	$gt-432					: "(min-width:433px)"; 
+	$bp-432 				: "(max-width:432px)";
+	$gt-375					: "(min-width:376px)";
+	$bp-375					: "(max-width:375px)";
+	$gt-360 				: "(min-width:361px)";
+	$bp-360 				: "(max-width:360px)";
+	$gt-320 				: "(min-width:321px)";
+	$bp-320 				: "(max-width:320px)";
+
+// Custom
+// project global variables
+// --------------------------------------------
+$img					: '../img/';
+$font-size				: 16px;
+$masthead-h				: 70px;
+//$masthead-h-fixed		: 70px;
+$masthead-h-mb			: 60px;
+$ease-strong			: cubic-bezier(.3,.3,.24,1);
+$ease-strong-io			: cubic-bezier(.46,0,.35,1);
+$ease-back				: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+
+///////////////////////////////////////////////
+// 覆寫 Bootstrap 內建 variables              //
+// 建立基本 theme                             //
+///////////////////////////////////////////////
+
+//
+// Colors
+// --------------------------------------------
+
+// BS $grays
+$gray-100				: #f2f2f2; 	// Not used
+$gray-300				: #8b8c8c;   // Not used
+$gray-500				: #666; 	// body text color
+$gray-700				: #454545; 	
+$gray-900				: #333;	
+
+// BS Gray color keys
+$light					: $gray-100; 
+$gray-light				: $gray-300;
+$gray					: $gray-500;
+$gray-dark				: $gray-700;
+$dark					: $gray-900;
+$black					: #000; 
+$white					: #fff;	 
+
+// Project color keys
+$primary				: #AF935D;	// title, button - main gold
+$lake 					: #45544F;  // title, background - main dark green 
+$beige 					: #F1EFEB;  // background
+$beige2					: #EDE8E2;  // background, watermark - slightly darken beige
+$wheat					: #DCC39D;	// border, line
+$brown					: #846D54;  // mobile nav panel
+
+
+// Not included in $theme-colors 
+$red 					: #D34C4C;  // invalid form input
+
+//
+// Recreate BS $theme-colors
+// 刪除模陵兩可的color key，並將上述 $color 加入 $theme-colors 陣列
+// 讓 BS 產生整套 text, bg, link, button等 theme class
+// --------------------------------------------
+
+$theme-colors: (
+	"light":			$light,
+	"gray-light": 		$gray-light,
+	"gray": 			$gray, 
+	"gray-dark": 		$gray-dark,
+	"dark":				$dark,
+	"black":			$black,
+	"white":			$white,
+		
+	"primary":			$primary,
+	"lake":				$lake,
+	"brown":			$brown,
+	"beige":			$beige,
+	"beige2":			$beige2,
+	"wheat":			$wheat
+);
+
+
+
+// Basic colors
+// --------------------------------------------
+$border-color:						$wheat;
+$body-bg: 							$beige;
+$body-color: 						$gray-500;
+
+$hr-border-color:					$border-color;
+$text-muted:                  		$gray-500;
+
+$table-color:                 		$gray-900;
+$table-border-color:          		$border-color;
+
+
+// Options
+// --------------------------------------------
+$enable-rounded:					false;
+$enable-shadows: 					false;
+$enable-gradients: 					false;
+$enable-hover-media-query: 			false;
+$enable-print-styles: 				false;
+$enable-responsive-font-sizes: 		false;
+$enable-validation-icons:			true;
+
+$transition-base:             		all .12s ease;
+$transition-fade:             		opacity .12s ease;
+
+
+
+// Link, Typography
+// --------------------------------------------
+
+$link-color: 						$body-color;
+$link-hover-color: 					rgba($link-color, .75);
+
+$link-decoration: 					none;
+//$link-hover-decoration:				none; @20230326 removed
+
+$font-family-notosans:				"Noto Sans TC";	
+$font-family-sans-serif:			$font-family-notosans, Helvetica, Arial, sans-serif;
+$font-family-serif:					"Noto Serif TC", Times New Roman, serif;
+$font-family-base:            		$font-family-sans-serif; 
+
+
+
+$line-height-base: 					1.6; 
+
+
+// Grid
+$grid-gutter-width: 				0; 
+
+// Media breakpoints
+// Revised default by adding 1px
+$grid-breakpoints: ( 
+					xs:				0,
+					sm:				(576px),
+					md:				(768px),
+					lg:				(992px),
+					xl:				(1200px)
+);		
+$container-max-widths: (			
+					sm: 			100%,
+					md: 			100%,
+					lg: 			100%,
+					xl: 			100%
+);
+
+
+
+
+// Font size
+$font-size-lg:						1rem; //覆寫BS，避免大按鈕就大字
+//$btn-font-size:					(16/16)*1rem;
+//$input-btn-font-size:				(16/16)*1rem;
+//$btn-font-size-lg:				(16/16)*1rem;
+//$input-btn-font-size-lg:			(16/16)*1rem;
+
+// .display-1 ~ .display-3
+$display1-size:               		(70/16)*1rem; 
+$display2-size:               		(54/16)*1rem; // not used
+$display3-size:               		(32/16)*1rem; 
+
+// .h1 ~ .h6
+$h1-font-size:						(28/16)*1rem;
+$h2-font-size:						(24/16)*1rem;
+$h3-font-size:						(20/16)*1rem;
+$h4-font-size:						(18/16)*1rem;
+$h5-font-size:						(16/16)*1rem;
+$h6-font-size:						(14/16)*1rem;
+
+// Create .h1 ~ .h6 RWD font sizse which
+// are not native in BS
+// See also ../common/_type.scss
+$rwd-rem-ajust:						1; // = 16/16
+$display1-size-mb:					(40/16)*1rem*$rwd-rem-ajust;
+$h1-font-size-mb:					(32/16)*1rem*$rwd-rem-ajust;
+$h2-font-size-mb:					(22/16)*1rem*$rwd-rem-ajust;
+$h3-font-size-mb:					(20/16)*1rem*$rwd-rem-ajust;
+$h4-font-size-mb:					(18/16)*1rem*$rwd-rem-ajust; 
+$h5-font-size-mb:					(16/16)*1rem*$rwd-rem-ajust; 
+$h6-font-size-mb:					(14/16)*1rem*$rwd-rem-ajust; 
+
+$small-font-size: 					85%;
+$big-font-size: 					108%; // not BS standard
+$font-weight-light:          		300;
+$font-weight-normal:         		400;
+$font-weight-bold:           		500;
+$font-weight-bolder:         		700;
+
+
+// Sizing
+//$sizes: (10:10%, 20:20%, 30:30%, 40:40%, 60:60%, 70:70%, 80:80%, 90:90%);
+
+// Component
+$border-radius:              		.25rem;
+$border-radius-lg:           		.5rem;
+$border-radius-sm:           		.2rem;
+
+
+$component-active-color:     		$gray-900;
+$component-active-bg:         		$gray-100;
+
+
+// Buttons + Form
+
+// $input-btn-padding-x-sm:   		    1.5rem; 
+// $input-btn-padding-x:   		    2.75rem;
+// $input-btn-padding-x-lg:   		    3.25rem;  
+
+$input-btn-padding-y-sm:   		    .25rem; 
+$input-btn-padding-y:   		    .5rem;
+$input-btn-padding-y-lg:      		.75rem;
+
+$input-btn-line-height:				1.2;
+$input-btn-line-height-sm:			1.2;
+$input-btn-line-height-lg:			1.2;
+
+
+// Buttons
+$btn-border-width:            		1px;
+$btn-font-weight: 					500;
+
+$btn-border-radius:           		.25rem;
+$btn-border-radius-lg:        		.3rem;
+$btn-border-radius-sm:        		.2rem;
+
+$btn-disabled-opacity:				.7;
+
+$btn-transition:					all .15s ease-in-out, padding .3s ease-out;
+
+// Spacer
+$spacers:							(1: .25rem,
+									 2: .5rem,
+									 3: 1rem,
+									 4: 2rem,
+									 5: 3rem);
+
+
+// Table
+$table-th-font-weight: 				500;
+$table-cell-padding:				1rem;
+
+// Dropdown
+// $dropdown-color: 					$body-color;
+// $dropdown-link-color:               $body-color;
+// $dropdown-link-hover-color:         darken($body-color, 5%);
+// $dropdown-link-hover-bg:            $gray-100;
+// $dropdown-item-padding-x:			.75rem;
+// $dropdown-font-size:                (15/16)*1rem;
+// $dropdown-border-color:				$border-color;
+
+
+// Form
+$input-color:						$body-color;
+$input-placeholder-color:           $gray-300;
+$custom-control-label-color:		$body-color;
+
+$form-grid-gutter-width: 			30px;
+$form-group-margin-bottom: 			10px;
+
+$label-margin-bottom:				0;
+
+$input-padding-x:					.75rem;
+
+$input-bg:							$white; 
+//$input-btn-border-width:			1px;
+//$input-border-width:				0;
+$input-border-color:                $white;
+
+
+//$input-border-radius:               4px;
+//$input-border-radius-sm:            10px;
+//$input-border-radius-lg:			10px;
+//$custom-select-border-radius:		10px;
+//$input-font-size-lg:				(14/16)*1rem;
+
+		
+	// Radio, checkbox
+	$custom-control-indicator-size:  1.25rem;
+	$custom-control-indicator-border-color: $wheat;
+
+	$custom-control-indicator-bg:		$white;
+	$custom-control-indicator-active-border-color: $wheat;
+	$custom-control-indicator-checked-color: $brown;
+	$custom-control-indicator-checked-border-color: $brown;
+	
+	$custom-control-gutter:				.25rem;
+	//$input-group-addon-bg:				$white; // label background
+	//$input-group-addon-border-color:	transparent;
+	$custom-file-button-bg:				transparent;
+	
+	
+	$form-feedback-valid-color:         #16C079; 
+	$form-feedback-icon-valid:			none;
+	$form-feedback-invalid-color:       $red;
+	$form-feedback-icon-invalid:		none;
+	$custom-file-text:					(en: "Browse");
+	
+	
+	// Input focus
+	//$input-btn-focus-width:      		1px;
+	$input-btn-focus-color:       		rgba($primary, .3);
+	//$input-focus-width:					1px; 
+	//$input-focus-border-color:			$wheat;
+	//$input-btn-focus-box-shadow:  		inset 0 0 0 1px rgba($primary, .1);
+	//$custom-select-focus-box-shadow:	inset 0 0 0 1px rgba($primary, .1);
+	
+	// Input disabled
+	$custom-select-disabled-color:      $gray-300;
+	//$custom-control-label-disabled-color: $gray-500;
+	
+	$input-disabled-bg:					mix($gray-100, white);
+	$custom-select-disabled-bg:         mix($gray-100, white);
+
+	// .form-control validated icon position
+	//$input-height-inner-quarter: 		5px;
+		
+
+
+// Modal overlay
+//$modal-backdrop-bg:                 $gray-900;
+//$modal-backdrop-opacity:            .66;
+
+// Responsive embed
+$embed-responsive-aspect-ratios: 	( (16 9), ); 
+//$embed-responsive-aspect-ratios: ( (16 9), (5 3) );
+
+
+// Displays
+$displays: none, inline, inline-block, block, table, flex, inline-flex;//, list-item;
+
+// --------------------------------------------
+//  Boostrap environment imported here
+// --------------------------------------------
+@import "./bootstrap/_functions.scss";
+@import "./bootstrap/_variables.scss"; 
+@import "./bootstrap/_mixins.scss"; 
+
+
+// --------------------------------------------
+// Remove all the BS default keys not needed
+// --------------------------------------------
+$theme-colors: map-remove($theme-colors, /* "primary", */ "secondary", "success", "info", "warning", "danger"/*, "light", "dark"*/); 
+$colors: map-remove($colors, "blue","pink", "red", "orange", "green", "cyan", "yellow", "purple",
+					"indigo", "teal", "white", "black", "gray","gray-dark");
+$grays: map-remove($grays, "200", "400", "600", "800");

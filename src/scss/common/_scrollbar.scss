@@ -1,0 +1,16 @@
+// 
+// --------------------------------------------
+// Scrollbar
+// --------------------------------------------
+.scrollbar-x {
+	overflow: hidden;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	@include scrollbar($blue);
+}
+.scrollbar-y {
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	@include scrollbar($blue);
+}

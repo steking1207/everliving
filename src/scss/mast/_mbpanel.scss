@@ -1,0 +1,158 @@
+//
+// Mobile navigation
+// --------------------------------------------
+@media #{$gt-992} {
+	.mbpanel { display: none!important; }
+}
+
+@media #{$bp-992} {
+	.mbpanel {
+		//display: block!important;  //debug
+		position: fixed;
+		z-index: 20;
+		left: 0; bottom: 0;
+		top: $masthead-h-mb;
+		width: 100%;
+		overflow: hidden;
+		animation: fade-in .15s ease backwards;
+		background: transparent;  // overlay color
+		transition: background .2s;
+	}
+	.mbpanel.panel--active {
+		background: rgba($lake, .7);// overlay color
+	}
+	.mbpanel-inner {
+		position: relative;
+		//max-width: 375px;
+		max-width: 432px;
+		width: 80%;
+		height: 100%;
+		overflow: hidden;
+		background: $brown url($img+'ui/mbpanel-pattern.png') no-repeat 100% 100%;
+		background-size: auto 250px;
+		color: #fff;
+		animation: slide-left-in .15s ease both;
+	}
+	.mbpanel.animate-out {
+		display: block!important;
+		.mbpanel-inner { animation: slide-left-out .15s ease both; }
+	}
+	.mbpanel-col {
+		flex: 0 0 100%;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		@include scrollbar;
+		overscroll-behavior: none; // https://css-tricks.com/almanac/properties/o/overscroll-behavior/
+	}
+		.mbpanel-col:before { // top padding
+			content: ''; display: block; height: 20px;
+		}
+		.mbpanel-col:after { // mbpanel-serive psace
+			content: ''; display: block; height: 60px;
+		}
+
+		// ---------------
+		.mbpanel-item {
+			position: relative;
+			//border-bottom: 1px solid $border-color;
+		}
+			.mbpanel-link {
+				//position: -webkit-sticky; position: sticky;
+				//top: 0;
+				//z-index: 1;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 15px 20px 15px 52px;
+				font-size: rem(18);
+				line-height: 1.2;
+				letter-spacing: .2rem;
+			}
+				.mbpanel-link-txt {
+					transition: color .12s;
+				}
+			
+				.mbpanel-link-ico {
+					width: 16px; 
+					margin-left: auto;
+					text-align: center;
+					font-size: rem(20);
+					transition: .12s;
+					transform-origin: 50% 50%;
+				}
+			// state
+			.no-touch a.mbpanel-link:hover,
+			.no-touch a.mbpanel-link:focus,
+			a.mbpanel-link:active {
+				//background: $gray-100;
+				color: $beige2;
+			}
+			//.mbpanel-item.active,
+			//.foldable--expanded .mbpanel-link { box-shadow: 0 2px 4px rgba(#000,.05);  }
+			//.foldable--expanded .mbpanel-link-ico { transform: rotate(180deg);  }
+		
+		
+		// ---------------
+		.mbpanel-sub {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			padding: 10px 20px 10px 70px;
+		}
+			.mbpanel-subitem {
+				margin-bottom: 10px;
+			}
+				.mbpanel-sublink {
+					display: flex;
+					padding: 10px 0;
+					align-items: center;
+					font-size: rem(16);
+					line-height: 1.2;
+					letter-spacing: .2rem;
+				}
+					.mbpanel-sublink-txt {}
+					
+				.no-touch a.mbpanel-sublink:hover,
+				.no-touch a.mbpanel-sublink:focus,
+				a.mbpanel-sublink:active {
+					color: $beige2;
+				}
+}
+
+@media #{$bp-432} {
+	.mbpanel {
+		animation: none; // @20220222 drop any animation to avoid peeking unwanted body scrolling position
+	}
+	.mbpanel-inner {
+		max-width: none;
+		width: 100%;
+		//max-height: 500px;
+		animation: slide-top-in .15s ease-out both;
+		//animation: none; // @20220222 drop any animation to avoid peeking unwanted body scrolling position
+	}
+	.mbpanel.animate-out {
+		//display: none!important; // @20220222 drop any animation to avoid peeking unwanted body scrolling position
+	}
+	.mbpanel.animate-out .mbpanel-inner {
+		animation: slide-top-out .15s ease-in both;
+		//animation: none; // @20220222 drop any animation to avoid peeking unwanted body scrolling position
+	}
+}
+
+	
+// @20220222
+// Prevent iOS 15+ Safari from hiding address bar when .mbpanel is visible
+// See _masterhead.js as well
+@supports (-webkit-touch-callout: none) { // An iOS Safari issue only
+	html.mbpanel--open,
+	html.mbpanel--open body {
+		height: 100vh;
+		height: calc(var(--vh) - 1px);
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+}

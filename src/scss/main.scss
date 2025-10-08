@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/*! main
+ * Third-parties included:
+ * - Bootstrap v4.6.1 ( grid, buttons, form, custom-forms, most part of utilities )
+ * - lity lightbox
+ */
+//
+// --------------------------------------------
+// Environment
+// All the defaults need to be overriden put in ./bootstrap/_variables.scss
+// --------------------------------------------
+	@import './env/_variables.scss';
+	@import './env/_function.scss';
+	@import './env/_mixin.scss';
+	
+
+//
+// --------------------------------------------
+// Third-parties
+// --------------------------------------------
+
+	//@import './libs/_swiper.scss'; // v5.4.5 http://web.archive.org/web/20210202114227/https://swiperjs.com/swiper-api
+	//@import './libs/_swiper-customized.scss';
+	
+	@import './libs/_lity.scss';
+	@import './libs/_lity-customized.scss';
+
+
+//
+// --------------------------------------------
+//  Bootstrap v4.6.1
+// --------------------------------------------
+	// Find these dependencies in ./env/_bootstrap-variables.scss
+	// Do not include again!
+	// --------------------------------------------
+	///*Do not use*/ ./bootstrap/_functions.scss
+	///*Do not use*/ ./bootstrap/_variables.scss
+	///*Do not use*/ ./bootstrap/_mixins.scss   
+	
+	
+	// BS Components
+	// --------------------------------------------
+	
+	@import "./bootstrap/_root.scss";   
+	@import "./bootstrap/_reboot.scss";
+	//@import "./bootstrap/_type.scss"; // Extracted and combined to project scss/common/_type.scss. Do not turn this on!
+	//@import "./bootstrap/_images.scss";
+	//@import "./bootstrap/_code.scss";
+	@import "./bootstrap/_grid.scss";
+	//@import "./bootstrap/_tables.scss";
+	@import "./bootstrap/_forms.scss";
+	@import "./bootstrap/_buttons.scss";
+	//@import "./bootstrap/_transitions.scss";
+	//@import "./bootstrap/_dropdown.scss";
+	//@import "./bootstrap/_button-group.scss";
+	//@import "./bootstrap/_input-group.scss";
+	@import "./bootstrap/_custom-forms.scss";
+	//@import "./bootstrap/_nav.scss";
+	///*Do not use*/ @import "./bootstrap/_navbar.scss"; 
+	//@import "./bootstrap/_card.scss";
+	//@import "./bootstrap/_breadcrumb.scss";
+	//@import "./bootstrap/_pagination.scss";
+	//@import "./bootstrap/_badge.scss";
+	//@import "./bootstrap/_jumbotron.scss";
+	//@import "./bootstrap/_alert.scss";
+	//@import "./bootstrap/_progress.scss";
+	//@import "./bootstrap/_media.scss";
+	//@import "./bootstrap/_list-group.scss";
+	//@import "./bootstrap/_close.scss";
+	//@import "./bootstrap/_toasts.scss";
+	//@import "./bootstrap/_modal.scss";
+	//@import "./bootstrap/_tooltip.scss";  
+	//@import "./bootstrap/_popover.scss";  
+	//@import "./bootstrap/_carousel.scss";
+	//@import "./bootstrap/_spinners.scss";
+	//@import "./bootstrap/_print.scss"; 
+
+	
+	// BS Utilities
+	// Pulled out from ./bootstrap/_utilities.scss
+	// --------------------------------------------
+	
+		@import "./bootstrap/utilities/_align.scss";
+		@import "./bootstrap/utilities/_background.scss";
+		@import "./bootstrap/utilities/_borders.scss";
+		//@import "./bootstrap/utilities/_clearfix.scss";
+		@import "./bootstrap/utilities/_display.scss";
+		//@import "./bootstrap/utilities/_embed.scss";
+		@import "./bootstrap/utilities/_flex.scss";
+		//@import "./bootstrap/utilities/_float.scss";
+		@import "./bootstrap/utilities/_overflow.scss";
+		@import "./bootstrap/utilities/_position.scss";
+		@import "./bootstrap/utilities/_screenreaders.scss";
+		//@import "./bootstrap/utilities/_shadows.scss";
+		@import "./bootstrap/utilities/_sizing.scss";
+		//@import "./bootstrap/utilities/_stretched-link.scss";
+		@import "./bootstrap/utilities/_spacing.scss";
+		@import "./bootstrap/utilities/_text.scss";
+		//@import "./bootstrap/utilities/_visibility.scss";
+
+
+//
+// --------------------------------------------
+// Website base styles
+// --------------------------------------------
+
+	// Commons
+	@import './common/_reset.scss'; 				// CSS Reset, override BS reboot
+	@import './common/_usibility.scss';
+	@import './common/_bootstrap-customized.scss';  // Override BS default styles or behaviors
+	//@import './common/_scrollbar.scss';
+	//@import './common/_scrollhint.scss';			// 橫向選單捲軸提示
+	@import './common/_keyframes.scss';	
+	@import './common/_icon.scss';
+	@import './common/_ico-ui-codes.scss'; 			// Import fontello genereted glyph stylesheet
+	@import './common/_type.scss'; 					// Typography, replacement of BS "./bootstrap/_type.scss"
+	@import './common/_color+hover.scss';
+	@import './common/_bg.scss';
+	@import './common/_button.scss';	
+	@import './common/_list.scss';
+	//@import './common/_editor-reboot.scss';
+	
+	// Wireframe	
+	@import './mast/_masthead.scss';
+	@import './mast/_mbpanel.scss';					// Mobile nav panel
+	@import './mast/_mastbody.scss';
+	@import './mast/_mastfoot.scss';
+	
+	
+	// UI components				
+	@import './common/_foldable.scss';				
+	@import './common/_anim.scss';
+	@import './common/_all.scss';	
+
+	// Section content
+	@import './section/_section.scss';

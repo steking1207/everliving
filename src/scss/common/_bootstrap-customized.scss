@@ -1,0 +1,67 @@
+// 
+// --------------------------------------------
+// Modify Bootstrap default styles
+// --------------------------------------------
+// .table td,
+// .table th { 
+// 	padding: .75rem 1rem; 
+// 	border-top: 0; border-bottom: 1px solid $border-color;
+// 	vertical-align: middle;
+// }
+// .table thead th,
+// .table thead td { vertical-align: middle; }
+// @media #{$bp-768} {
+// 	.table th,
+// 	.table td { padding: .75rem .5rem; } 
+// }
+
+// [class*="table-responsive"] {
+// 	@include scrollbar($size: 5px, $theme: $gray);
+// }
+
+// --------------------------------------------
+// @media #{$gt-992} {
+// 	.overflow-lg-visible { overflow: visible!important; }
+// }
+// @media #{$gt-1200} {
+// 	.overflow-xl-hidden { overflow: hidden!important; }
+// }
+
+// --------------------------------------------
+
+.custom-select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.was-validated .custom-select:invalid,
+.custom-select.is-invalid,
+.was-validated .form-control:invalid, 
+.form-control.is-invalid {
+    background-color: #FFECEC;
+}
+.custom-select:invalid,
+.custom-select option[value=""] {
+    color: $gray-300!important;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+	color: $gray-300;
+}
+
+
+// 
+// Fix bug of IE10 and IE11
+// which containers with `display: flex` and `flex-direction: column`
+// will not properly calculate their flexed childrens' sizes
+.flex-column.ie11fix > *,
+.flex-sm-column.ie11fix > *,
+.flex-md-column.ie11fix > *,
+.flex-lg-column.ie11fix > *,
+.flex-xl-column.ie11fix > * {
+	max-width: 100%;
+}
+
+
+

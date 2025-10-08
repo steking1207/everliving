@@ -1,0 +1,49 @@
+// @keyframes interactable-waitup {
+// 	0% { pointer-events: none; } 100% { pointer-events: auto; }
+// }
+
+@keyframes fade-in {
+	  0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+// @keyframes fade-out {
+// 	  0% { opacity: 1; }
+// 	100% { opacity: 0; }
+// }
+
+@keyframes slide-left-in {
+	from { transform: translateX(-30px); opacity: 0; }
+}
+@keyframes slide-left-out {
+	to { transform: translateX(-30px); opacity: 0; }
+}
+@keyframes slide-bottom-in {
+	from { transform: translateY(30px); opacity: 0; }
+}
+@keyframes slide-top-in {
+	from { transform: translateY(-30px); opacity: 0; }
+}
+
+@keyframes slide-top-out {
+	to { transform: translateY(-30px); opacity: 0; }
+}/*
+@keyframes slide-right-in {
+	from { transform: translateX(30px); opacity: 0; }
+}
+*/
+@keyframes scale-in {
+	from { transform: scale(.9); }
+}
+@keyframes scale-in-near {
+	from { transform: scale(.8); }
+}
+// @keyframes spin {
+// 	to { transform: rotate(360deg); }
+// }
+@keyframes dash {
+  	to { stroke-dashoffset: 1000; }
+}
+
+@keyframes scale-y0-in {
+	from { transform: scaleY(0); }
+}

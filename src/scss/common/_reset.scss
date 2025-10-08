@@ -1,0 +1,21 @@
+//
+// --------------------------------------------
+// Basic reset
+// (override Bootstrap ../bootstrap/scss/_reboot.scss)
+// --------------------------------------------
+html, body, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dd, dt, p, img, svg,
+object, embed, audio, video, canvas, iframe,
+figure, figcaption, blockquote, fieldset{ padding: 0; margin: 0; border: 0; }
+section,main,header,footer,figcaption { display: block; }
+ul, ol, dl, dd, dt { list-style: none outside none; }
+object, embed, audio, video, canvas, iframe, img, svg { vertical-align: bottom; }
+img { height: auto; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font:inherit; vertical-align:baseline; }
+//big, small { font-size:inherit; } 
+//i, em { font-style: normal; } 
+select,input,button,textarea,optgroup { font-family: $font-family-base; }
+input, textarea { box-sizing: border-box; }
+table { font-size: inherit; font: 100%; }
+//*, *:before, *:after { box-sizing: border-box; }
+
+picture, video { display: block; }

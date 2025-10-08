@@ -1,0 +1,56 @@
+// Convert length to percentage relative to specific length
+@function perc( $len, $to:$site-width, $round:false ) {
+	$value: percentage( strip-units($len) / strip-units($to) );
+	@if $round {
+		@return round( $value );
+	} @else {
+		@return $value;
+	}
+}
+
+@function round-perc( $len, $to ) {
+	$value: percentage( strip-units($len) / strip-units($to) );
+	@return round( $value );
+}
+
+// @see http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841
+@function strip-units($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+// Convert pixel unit to em
+@function em( $pixel, $font-size: $font-size, $round:false ) {
+	$value: (strip-units($pixel) / strip-units($font-size)) * 1em;
+	@if $round {
+		@return round( $value );
+	} @else {
+		@return $value;
+	}
+}
+
+// Convert pixel unit to rem
+@function rem( $pixel, $round:false ) {
+	$value: (strip-units($pixel) / strip-units($font-size)) * 1rem;
+	@if $round {
+		@return round( $value );
+	} @else {
+		@return $value;
+	}
+}
+
+@function round-em( $pixel, $font-size: $font-size ) {
+	$value: (strip-units($pixel) / strip-units($font-size)) * 1em;
+	@return round( $value );
+}
+
+// Short cut for inline-image helper function @see http://compass-style.org/reference/compass/helpers/inline-data/
+@function data-url($img-url) {
+	@return inline-image($img-url); 
+}
+
+
+
+// vw @20240319
+@function vw($value, $to) {
+	@return round(strip-units($value) / strip-units($to) * 1000vw) / 10;
+}

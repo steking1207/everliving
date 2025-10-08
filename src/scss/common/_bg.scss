@@ -1,0 +1,12 @@
+// Additional background colors not in BS theme
+// @each $color, $value in (
+// 						 "brown": $brown, ) {
+// 	.bg-#{$color} {
+// 		background-color: $value!important; 
+// 	}
+// } 
+
+
+.bg-none {
+	background: none!important;
+}

@@ -1,0 +1,18 @@
+# VScode setting
+*.vscode
+
+# DS_Store
+.DS_Store
+app/.DS_Store
+
+# Logs
+*.log
+logs
+
+# .publish cache
+.publish
+
+.npmrc
+*_src
+__*
+node_modules

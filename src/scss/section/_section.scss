@@ -1,0 +1,243 @@
+// --------------------------------------------
+// ### index - 融合地方耕深...
+// --------------------------------------------
+.connec {
+	height: 100vh;
+	.touch & { height: var(--vh); } // only once when page loaded
+	min-height: 700px;
+	max-height: 1200px;
+}
+	.connec-pix {
+		position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+	}
+		[class*="connec-pic"] {
+			position: absolute; 
+			//outline: 1px solid blue;//debug
+		}
+		.connec-pic1 {
+			top: 13.5%;
+			right: 50%; margin-right: perc(374,1920);
+			width: perc(585px,1920); max-width: 585px;
+		}
+		.connec-pic2 {
+			//top: 0; margin-top: -132px;
+			top: -13.2%;
+			left: 50%; margin-left: perc(500,1920);
+			width: perc(345px,1920); max-width: 345px;
+		}
+		.connec-pic3 {
+			top: 46.5%;
+			left: 50%; margin-left: perc(376,1920);
+			width: perc(585px,1920); max-width: 585px;
+		}
+
+	.connec .thread { height: 21.5vh; max-height: 215px; }
+	
+	@media #{$bp-1440} {
+		.connec-pic2 { top: -5%; }
+	}
+	// mobile layout
+	@media #{$bp-992} {
+		.connec { 
+			height: auto!important; min-height: 0; max-height: none; 
+			padding-bottom: 100px; 
+		}
+		.connec-pix { 
+			position: static; 
+			display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end;
+			width: 72%; margin: 0 auto 50px; 
+		}
+			[class*="connec-pic"] { position: relative; left: auto; right: auto; top: auto; width: auto; max-width: none; margin: 0; }
+			.connec-pic1 { flex: 0 0 50%; margin-top: 100px; padding-right: 15px;  }
+			.connec-pic2 { flex: 0 0 50%; padding-right: 15px; top: 0px; }
+			.connec-pic3 { flex: 0 0 80%; left: 20px; margin-top: 67px; }
+		.connec .thread { height: 90px; }
+	}
+	@media #{$bp-576} {
+		.connec-pix { width: auto; }
+		.connec-pic3 { flex-basis: 100%;  }
+		.connec .thread { height: 60px; }
+	}
+	
+
+//
+// --------------------------------------------
+// ### index - Our value
+// --------------------------------------------
+.values-item {
+	width: 200px; height: 200px;
+}
+.values-x {
+	width: 32px; height: 32px;
+}
+// mobile layout
+@media #{$bp-1200} {
+	.values-item { width: 150px; height: 150px; }
+	.values-x { width: 24px; height: 24px; }
+}
+@media #{$bp-992} {
+	.values-item { width: 130px; height: 130px; }
+	.values-x { width: 20px; height: 20px; }
+}
+@media #{$bp-432} {
+	.values-item { width: 36vw; height: 36vw; }
+}
+// anim
+/* .mmb  */.values-item svg { 
+	stroke-dasharray: 630;
+	stroke-dashoffset: 630; 
+	&.llin:not(.llout) { 
+		stroke-dashoffset: 0; 
+		// designate value seperately to override _anim.scss presets
+		transition-property: stroke-dashoffset!important;
+		transition-duration: 3s!important;
+		transition-timing-function: $ease-strong-io!important;
+	}
+}
+
+.value-overlay {
+	background: mix(rgba(#100E0B, .5), rgba(#DCC39D, .2));
+}
+
+
+//
+// --------------------------------------------
+// ### index - News
+// --------------------------------------------
+.newslist {
+	li {
+		position: relative;
+		border-bottom: 1px solid $wheat;
+	}
+	li:first-child { margin-top: -40px;}
+	li:last-child { border-bottom: 0; }
+		li > a, 
+		li > p {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 40px 0;
+		}
+		li > a:after {
+			content: "\f006"; font-family: "ico-ui";
+			display: inline-block;
+			margin-left: 1rem;
+			color: $primary;
+			font-size: rem(18);
+		}
+		li time {
+			position: absolute;
+			left: 0; top: 20px;
+			display: block;
+			color: $gray-light;
+			font-size: rem(13); 
+		}
+}
+	// mobile 
+	@media #{$bp-576} {
+		.newslist li:first-child { margin-top: -20px;}
+		.newslist li > a,
+		.newslist li > p { padding: 35px 0 15px; }
+		.newslist li time { top: 10px; }
+	}
+
+
+
+//
+// --------------------------------------------
+.pattern-year {
+	bottom: 100%; left: 0; 
+	margin-bottom: -25px;
+	color: rgba($wheat, .2);
+}
+.pattern-nature {
+	bottom: 0; left: 0; 
+	padding-bottom: 30%;
+	margin-left: -50%;
+	color: $beige2;
+	@media #{$bp-992} {
+		bottom: 100%;
+		padding-bottom: 0;
+		margin-left: 10px;
+		margin-bottom: -50px;
+	}
+}
+.pattern-time {
+	bottom: 0; right: 100%;
+	margin: 0 15px -15px 0;
+	color: $beige2;
+	@media #{$bp-992} {
+		left: 0; right: auto;
+		bottom: 100%;
+		margin: 0 0 -30px -30px;
+	}
+}	
+.pattern-art {
+	position: static;
+	text-align: center;
+	margin-bottom: -15px;
+	color: $beige;
+	letter-spacing: .15em;
+	@media #{$bp-992} {
+		left: 0; right: auto;
+	}
+}	
+
+// 
+// --------------------------------------------
+iframe.gmap {
+	filter: saturate(0%);
+	-webkit-filter: saturate(0%);
+	-moz-filter: saturate(0%);
+}
+
+
+//
+// --------------------------------------------
+// 心六藝 - 制震 .damper
+// --------------------------------------------
+.damper {
+	padding-top: perc(160,1440);
+	padding-bottom: perc(180,1440);
+}
+	.damper-pic {
+		position: absolute;
+		right: 0; bottom: 0; 
+		width: perc(1230,1920);
+		img { transform-origin: 120% 110%; }
+	}
+	@media #{$gt-1920} {
+		.damper { padding-top: 275px; padding-bottom: 275px; }
+		.damper-pic picture { margin-right: -23%; }
+	}
+	@media #{$bp-1200} {
+		.damper { padding-top: 150px;  } 
+	}
+	// mobile
+	@media #{$bp-992} { 
+		.damper { padding-top: 0; padding-bottom: 0; }
+		.damper-pic { position: static; width: 100%; }
+	}
+	@media #{$bp-576} { 
+		.damper-pic { width: 120%; margin-left: -8%;  }
+	}
+//
+// --------------------------------------------
+// ### about- 永裕居的理念
+// --------------------------------------------
+html .belief {
+	height: 800px;
+}
+	.belief-icon  {
+		max-width: 150px;
+	}
+	.belief-x {
+		width: 30px; height: 30px;
+		margin-top: 60px;
+	}
+	@media #{$bp-768} {
+		html .belief { height: auto; min-height: 580px; }
+		.belief-x { margin-top: 0; height: 0; margin: 20px auto;}
+	}
+
+

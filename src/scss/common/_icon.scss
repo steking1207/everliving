@@ -1,0 +1,41 @@
+//
+// --------------------------------------------
+// Icons
+// --------------------------------------------
+[class*="ico-"] {
+	position: relative;
+	text-align: left;
+	flex-shrink: 0;
+	display: inline-block;
+	speak: none;
+}
+
+//
+// --------------------------------------------
+// Icon font
+// .ico-ui-XXX
+// --------------------------------------------
+@font-face {
+	font-family: 'ico-ui'; 
+	src: url('font/ico-ui.woff2?2204') format('woff2'),
+		 url('font/ico-ui.woff?2024') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+[class^="ico-ui-"]:before,
+[class*=" ico-ui-"]:before {
+	display: inline-block;
+	line-height: 1em;
+	font-family: "ico-ui";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-decoration: inherit;
+	text-align: center;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

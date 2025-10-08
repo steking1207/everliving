@@ -1,0 +1,121 @@
+//
+// --------------------------------------------
+// Preset .anim-XXX by using Lazyload
+// @20220918
+// --------------------------------------------
+
+//.mmb { // pc & modern mobile, 
+//.mpc { // pc only, cause FOUC
+// If comment out device class, 
+// set Lazyload rootMargin > 0% is required (which triggers animation vertically outside of screen view).
+	.anim-fade,	
+	.anim-fade.llout:not(.anim-once) 		{ opacity: 0; }  // clear transition to display every entrance
+	.anim-fade.anim-once.llin, 								 // display once
+	.anim-fade.llin:not(.llout) 			{ opacity: 1;  } // display every entrance
+
+	.anim-fadeout,	
+	.anim-fadeout.llout:not(.anim-once) 	{ opacity: 1; } 
+	.anim-fadeout.anim-once.llin,
+	.anim-fadeout.llin:not(.llout) 			{ opacity: 0; } 
+
+	.anim-up,	
+	.anim-up.llout:not(.anim-once) 			{ transform: translateY( 30px); }
+	.anim-up.anim-once.llin,
+	.anim-up.llin:not(.llout) 				{ transform: translateY(  0px); }
+
+	.anim-down,	
+	.anim-down.llout:not(.anim-once) 		{ transform: translateY(-30px); }
+	.anim-down.anim-once.llin,
+	.anim-down.llin:not(.llout) 			{ transform: translateY(  0px); }
+
+	.anim-right,	
+	.anim-right.llout:not(.anim-once) 		{ transform: translateX(-30px); }
+	.anim-right.anim-once.llin,
+	.anim-right.llin:not(.llout)			{ transform: translateX(  0px); } 
+	
+	.anim-left,	
+	.anim-left.llout:not(.anim-once) 		{ transform: translateX( 30px); }
+	.anim-left.anim-once.llin, 					
+	.anim-left.llin:not(.llout) 			{ transform: translateX(  0px); } 
+
+	.anim-scalein { transform-origin: 50% 120%; }
+	.anim-scalein,	
+	.anim-scalein.llout:not(.anim-once) 	{ transform: scale(.9) translateY(30px); }
+	.anim-scalein.anim-once.llin, 				
+	.anim-scalein.llin:not(.llout) 			{ transform: scale(1); } 
+//}
+
+//.mmb { // pc & modern mobile
+//.mpc { // pc only
+// If comment out device class, 
+// set Lazyload rootMargin > 0% is required (which triggers animation vertically outside of screen view).
+
+
+	 // clear transition to display every entrance
+	.ll[class*="anim-"]:not(.anim-wrap_),
+	.ll.llout[class*="anim-"]:not(.anim-wrap_):not(.anim-once)
+	//.anim-fade.ll,	
+	//.anim-fade.ll.llout:not(.anim-once),
+	
+	{ transition: none; }  
+	//{ transition: .2s ease-in .3s; transition-property: opacity, transform; }
+
+	.anim-once.llin[class*="anim-"]:not(.anim-wrap_),  // display once
+	.llin[class*="anim-"]:not(.anim-wrap_):not(.llout) // display every entrance
+	//.anim-fade.anim-once.llin, // display once
+	//.anim-fade.llin:not(.llout),// display every entrance
+	{ transition: 1.3s $ease-strong .1s; transition-property: opacity, transform; }
+
+
+	.anim-slow.anim-once.ll.llin, 
+	.anim-slow.ll.llin:not(.llout) { transition-duration: 2s; }
+
+	@for $i from 0 through 10 { //@20230221
+		.anim-delay#{$i}.anim-once.ll.llin,
+		.anim-delay#{$i}.ll.llin:not(.llout) { transition-delay: .1s + (($i - 1)*.1s); }
+	}
+	.anim-nodelay.anim-once.ll.llin, 
+	.anim-nodelay.ll.llin:not(.llout) { transition-delay: 0s; }
+//}
+
+
+// Force to reset transitioning elements
+.anim-wrap.llout * { transition: none!important; } 
+
+/*
+.whiteout {
+	display: none;
+	position: absolute; left: 0; right: 0; top: -1px; bottom: -1px; background: $wheat;
+	pointer-events: none;
+}
+.mpc .ll.anim-fadeout.whiteout { display: block; }
+*/
+
+
+//
+// --------------------------------------------
+// Limit `.anim-*` applied only on pc with media breakpoint
+// --------------------------------------------
+@media #{$bp-992} {
+	.mastbody .anim-pconly-lg.ll.llin { transition: none!important; } 
+}
+@media #{$bp-768} {
+	.mastbody .anim-pconly-md.ll.llin { transition: none!important; } 
+}
+@media #{$bp-576} {
+	.mastbody .anim-pconly-sm.ll.llin { transition: none!important; } 
+}
+
+//
+// --------------------------------------------
+// Limit skrollr applied only on pc with media breakpoint
+// --------------------------------------------
+@media #{$bp-992} {
+	.skrollr-pconly-lg-transform { transform: none!important; } 
+}
+@media #{$bp-768} {
+	.skrollr-pconly-md-transform { transform: none!important; } 
+}
+@media #{$bp-576} {
+	.skrollr-pconly-sm-transform { transform: none!important; } 
+}
